@@ -1,4 +1,3 @@
-# Filmdag!
 ![logo](https://i.imgur.com/02XoSxL.png)
 
 Filmdag! Is an app movie recommender exclusive for your mood
