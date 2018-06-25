@@ -1,6 +1,6 @@
 # ![logo](https://i.imgur.com/02XoSxL.png)
 
- [![Version](https://img.shields.io/badge/beta-1.0.0-brightred.svg "Version")](https://github.com/fadhiilrachman/filmdag) [![LICENSE](https://img.shields.io/badge/license-GPL%203.0-blue.svg "LICENSE")](https://github.com/fadhiilrachman/filmdag/blob/master/LICENSE) 
+ [![Version](https://img.shields.io/badge/beta-1.0.0-brightred.svg "Version")](https://github.com/fadhiilrachman/filmdag) [![LICENSE](https://img.shields.io/badge/license-BSD%203%20Clause-blue.svg "LICENSE")](https://github.com/fadhiilrachman/filmdag/blob/master/LICENSE) 
 
 Filmdag! Is an app movie recommender exclusive for your mood
 
