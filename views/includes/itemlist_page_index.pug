@@ -1,0 +1,17 @@
+li.page-item
+    .pagethumb(data-toggle="tooltip" data-placement="top" title="" data-original-title=item.original_title)
+        a(href="/movie/" + item.id)
+            img(src='https://image.tmdb.org/t/p/w154' + item.poster_path, style="display: inline;")
+    .info
+        h3
+            a(href="/movie/" + item.id)= item.original_title
+        //- h4 Ryan Coogler
+        each genre in item.genre_ids
+            a.genre(href="/genre/" + genre.id, style={'margin': '2px'})= genre.name 
+        span.summary= item.overview
+        span.overlay
+            span.control.first
+                i.tiny.material-icons thumb_up
+            span(style={'margin': '5px'})
+            span.control.last
+                i.material-icons thumb_down

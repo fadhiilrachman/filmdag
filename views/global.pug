@@ -1,0 +1,78 @@
+doctype html
+html(lang="id")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		meta(name="description", content="Filmdag! Is an app for movie recommendations exclusive for your mood")
+		meta(name="author", content="Fadhiil Rachman")
+		link(rel="icon", href="/assets/images/favicon.ico")
+		title= page_title
+		block styles
+			link(rel="stylesheet", href="/assets/bootstrap/dist/css/bootstrap.min.css")
+			link(rel='stylesheet', href='/assets/material/dist/css/bootstrap-material-design.css')
+			link(rel='stylesheet', href='/assets/material/dist/css/ripples.css')
+			link(rel='stylesheet', href='/assets/material/dist/css/jquery.dropdown.css')
+			link(rel='stylesheet', href='/assets/css/style.css')
+			link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:300,400,500')
+			link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Material+Icons')
+			script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+			script(src="/assets/js/jquery.jcarousel.min.js")
+	body
+		block navbar
+		.navbar.navbar-default(role="navigation", style="margin-bottom: 0px;")
+			.container
+				.navbar-header
+					button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-collapse")
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					.navbar-brand
+						a(href="/")
+							img(src="/assets/images/logo.png" alt="MovieStore" border="0")
+				.navbar-collapse.collapse.navbar-responsive-collapse
+					ul.nav.navbar-nav
+						li
+							a(href="/") Home
+						//- li.dropdown
+						//- 	a.dropdown-toggle(href="#" data-target="#" data-toggle="dropdown")
+						//- 		| Film
+						//- 		b.caret
+						//- 	ul.dropdown-menu(style="min-width: 160px;")
+						//- 		.drop-row
+						//- 			li
+						//- 				a(href="/top-movies") Film Tayang Hari Ini
+					//- form.navbar-form.navbar-right(action="/search")
+					//- 	input.form-control.input-sm(type="text" placeholder="Search for..." name="q" value="")
+					//- 	input(type="hidden" name="change" value="1")
+					//- 	select.form-control.input-sm(name="entity")
+					//- 		option(value="movies") Movies
+					//- 	button.searchbut(type="submit")
+					//- 		i.material-icons search
+				// /.nav-collapse
+		script
+			include js/navbar_pug.js
+		block body
+		block footer
+		footer
+			.footcontent
+				.pull-left
+					| Copyright © 2018 
+					span Fadhiil Rachman
+				.pull-right
+					a(href="/") Home
+					span.footsep
+					a(href="https://github.com/fadhiilrachman/filmdag") Github Repo
+
+		block scripts
+			script(src="/assets/js/imglazyload.js")
+			script
+				include js/imglazyload_pug.js
+			// /script(src="/assets/jquery/dist/js/jquery-3.2.1.min.js")
+			script(src="/assets/bootstrap/dist/js/bootstrap.min.js")
+			script(src="/assets/js/ripples.min.js")
+			script(src="/assets/material/dist/js/material.min.js")
+			script(src="/assets/js/jquery.dropdown.js")
+			script
+				include js/init_pug.js

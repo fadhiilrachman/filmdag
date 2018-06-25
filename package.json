@@ -1,0 +1,26 @@
+{
+  "name": "filmdag",
+  "version": "1.0.0",
+  "description": "Filmdag! Is an app for movie recommendations exclusive for your mood",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fadhiilrachman/filmdag.git"
+  },
+  "author": "Fadhiil Rachman",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/fadhiilrachman/filmdag/issues"
+  },
+  "homepage": "https://github.com/fadhiilrachman/filmdag#readme",
+  "dependencies": {
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
+    "express-minify": "^1.0.0",
+    "pug": "^2.0.3"
+  }
+}

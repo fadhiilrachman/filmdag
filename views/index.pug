@@ -1,0 +1,30 @@
+extends global
+block body
+	//- .scrollback
+	//- 	.container
+	//- 		.scrollcontent
+	//- 			.carousel.fcarousel.fcarousel-6
+	//- 				.scrolltitle
+	//- 					h1 Film Populer Hari Ini
+	//- 				.carousel-container
+	//- 					.jcarousel
+	//- 						ul
+	//- 							each item in popular_items
+	//- 								li
+	//- 									.homethumb
+	//- 										a(href="/movie/" + item.id)
+	//- 											img(data-src="https://image.tmdb.org/t/p/w154" + item.poster_path src="/images/loading.svg" alt="")
+	//- 											span.overlay
+	//- 												p= item.original_title
+	//- 					.carousel-prev
+	//- 					.carousel-next
+
+	.container(style="margin-top: 20px;")
+		.pageresults
+			input.viewswitch-small(type="radio" name="viewswitch" checked="checked")
+			span.control.first
+				i.material-icons apps
+			ul.page-itemlist
+				p
+					center Loading...
+				
