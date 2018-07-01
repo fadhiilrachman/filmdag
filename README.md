@@ -22,7 +22,7 @@ Follow this command:
 ```sh
 $ npm start
 ```
-You can see the full of website on [http://localhost:3002](http://localhost:3002)
+You can see the full of website on [http://127.0.0.1:3002](http://127.0.0.1:3002)
 
 ## Author
 Fadhiil Rachman / [@fadhiilrachman](https://www.instagram.com/fadhiilrachman)
