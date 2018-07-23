@@ -29,7 +29,9 @@ app.get('/api/movieNowPlaying', (req, res) => {
         res
             .status(200)
             .json(data)
-    })
+    }).catch((error) => {
+        console.log(error);
+    });
 })
 
 app.get('/movie/:movieId', (req, res) => {
@@ -46,15 +48,17 @@ app.get('/movie/:movieId', (req, res) => {
             var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
             var release_date = rd_time.getDate() +' '+ months[rd_time.getMonth()] +' '+ rd_time.getFullYear();
             var release_year = rd_time.getFullYear();
-
-            var reviews = data_r.reviews;
             res
                 .status(200)
                 .render('movie-overview', { page_title: app_name, data: data, data_r: data_r,
-                    release_year: release_year, release_date:release_date, reviews: reviews
+                    release_year: release_year, release_date:release_date
                 });
-        })
-    })
+        }).catch((error) => {
+            console.log(error);
+        });
+    }).catch((error) => {
+        console.log(error);
+    });
 })
 
 app.get('/', (req, res) => {

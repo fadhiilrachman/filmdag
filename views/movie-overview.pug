@@ -40,7 +40,7 @@ block body
                     h3 Reviews
                 #reviews
                     ul(style="list-style:none;padding: 0px;")
-                        each review in reviews 
+                        each review in data_r.reviews 
                             li
                                 .starbox
                                     span.stars= review.polarity

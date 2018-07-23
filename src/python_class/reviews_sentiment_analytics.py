@@ -3,7 +3,7 @@
 import json, sys
 import tmdbsimple as tmdb
 from textblob import TextBlob
-tmdb.API_KEY = '5f8e77cffdf729efe6cb173496ddf5f1'
+tmdb.API_KEY = '46464f02eb02dcb9ea5b04c3f5b31958'
 
 if len(sys.argv) > 1:
 	data_json = {}
@@ -31,14 +31,16 @@ if len(sys.argv) > 1:
 			data_json1['sentiment'] = 'neutral'
 			sent_neu.append(data_json1['content'])
 		data_json1['polarity'] = float(blob.sentiment.polarity) * 10
-		data_json1['subjectivity'] = float(blob.sentiment.subjectivity)
+		full_rating = full_rating + float(blob.sentiment.polarity) * 10
 		data_json['reviews'].append( data_json1 )
 
-		full_rating = full_rating + float(blob.sentiment.polarity) * 10
 	data_json['pos'] = len(sent_pos)
 	data_json['neg'] = len(sent_neg)
 	data_json['neu'] = len(sent_neu)
-	data_json['full_rating'] = (full_rating / data['total_results'])
+	if data['total_results'] > 0:
+		data_json['full_rating'] = full_rating / int(data['total_results'])
+	else:
+		data_json['full_rating'] = 0
 	print( json.dumps(data_json) )
 else:
 	err = {'error': 'Movie ID tidak ditemukan', 'code': 404}
