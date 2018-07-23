@@ -13,7 +13,7 @@ result_genres=response_genre['genres']
 result_movie=response_movie['results']
 
 arr_mov=[]
-for m in response_movie['results'][:18]:
+for m in response_movie['results'][:24]:
     new_arr_mov={}
     arr=[]
     for g in m['genre_ids']:

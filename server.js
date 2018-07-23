@@ -44,7 +44,7 @@ app.get('/movie/:movieId', (req, res) => {
             var app_name = data.title;
             var rd_time = new Date( data.release_date );
             var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            var release_date = rd_time.getDate() +', '+ months[rd_time.getMonth()] +' '+ rd_time.getFullYear();
+            var release_date = rd_time.getDate() +' '+ months[rd_time.getMonth()] +' '+ rd_time.getFullYear();
             var release_year = rd_time.getFullYear();
 
             var reviews = data_r.reviews;

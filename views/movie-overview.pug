@@ -18,6 +18,12 @@ block body
                         b= 'Status: ' + data.status
                     li
                         b= 'Runtime: ' + data.runtime + ' minutes'
+                    li
+                        b= 'Rating: '
+                            .starbox
+                                span.stars= data_r.full_rating
+                    li
+                        b= 'Sentiment: ' + data_r.pos + ' positive, ' + data_r.neg + ' negative, ' + data_r.neu + ' neutral'
             .headpageright
                 .postactions
                     a.btn.btn-raised.btn-warning(href="http://www.21cineplex.com" target="_blank" rel="nofollow") Buy Tickets on XXI
@@ -25,7 +31,7 @@ block body
     .container
         .col-md-8(style="margin-top: 30px;padding-left:0px;")
             .postmain
-                .postmaintitle(style="margin-bottom:0px;")
+                .postmaintitle(style="margin-bottom: 10px;")
                     h3 Overview
                 .postmaindescr
                     p= data.overview
@@ -34,12 +40,12 @@ block body
                     h3 Reviews
                 #reviews
                     ul(style="list-style:none;padding: 0px;")
-                    each review in reviews 
-                        li
-                            .starbox
-                                span.stars= review.polarity
-                            .auth= 'by ' + review.author
-                            .cont= review.content
+                        each review in reviews 
+                            li
+                                .starbox
+                                    span.stars= review.polarity
+                                .auth= 'by ' + review.author + ' (' + review.sentiment + ')'
+                                .cont= review.content
             // end .postmain
             // end .postmain
         // .post-sidebar
