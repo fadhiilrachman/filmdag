@@ -19,6 +19,10 @@ function an_init() {
         delay: 400,
         callback: function(){}
     });
+    $(function() {
+        $('span.stars').stars();
+        $('span.bigstars').bigstars();
+    });
     $(".navbar-form select").dropdown();
     $(".genre-filter select").dropdown();
     $('[data-toggle="tooltip"]').tooltip();

@@ -19,6 +19,32 @@ class Filmdag {
         });
     }
 
+    getReviewsFilmById(id) {
+        return new Promise(function(resolve, reject) {
+            let { spawn } = require('child_process');
+            let pyprog = spawn('python', ['src/python_class/reviews_sentiment_analytics.py', id]);
+            pyprog.stdout.on('data', function(data) {
+                resolve(data);
+            });
+            pyprog.stderr.on('data', (data) => {
+                reject(data);
+            });
+        });
+    }
+
+    getFilmById(id) {
+        return new Promise(function(resolve, reject) {
+            let { spawn } = require('child_process');
+            let pyprog = spawn('python', ['src/python_class/get_film_by_id.py', id]);
+            pyprog.stdout.on('data', function(data) {
+                resolve(data);
+            });
+            pyprog.stderr.on('data', (data) => {
+                reject(data);
+            });
+        });
+    }
+
     getPopularMovie() {
         return new Promise(function(resolve, reject) {
             let { spawn } = require('child_process');

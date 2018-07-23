@@ -1,0 +1,46 @@
+extends global
+block body
+    .headpageoverlay
+        .container
+            .headpageimage
+                img(data-src='https://image.tmdb.org/t/p/w154' + data.poster_path alt=data.title title=data.title height="250px" width="167px")
+            .headpageinfo
+                h1.product-title= data.original_title + ' ('+ release_year +')'
+                h2.product-stock= data.production_companies['name']
+                ul(style="list-style:none;padding: 0px;")
+                    li
+                        b= 'Genre: '
+                            each genre in data.genres
+                                a.genre(href="/genre/" + genre.id, style={'margin': '2px'})= genre.name 
+                    li
+                        b= 'Release Date: ' + release_date
+                    li
+                        b= 'Status: ' + data.status
+                    li
+                        b= 'Runtime: ' + data.runtime + ' minutes'
+            .headpageright
+                .postactions
+                    a.btn.btn-raised.btn-warning(href="http://www.21cineplex.com" target="_blank" rel="nofollow") Buy Tickets on XXI
+
+    .container
+        .col-md-8(style="margin-top: 30px;padding-left:0px;")
+            .postmain
+                .postmaintitle(style="margin-bottom:0px;")
+                    h3 Overview
+                .postmaindescr
+                    p= data.overview
+            .postmain
+                .postmaintitle
+                    h3 Reviews
+                #reviews
+                    ul(style="list-style:none;padding: 0px;")
+                    each review in reviews 
+                        li
+                            .starbox
+                                span.stars= review.polarity
+                            .auth= 'by ' + review.author
+                            .cont= review.content
+            // end .postmain
+            // end .postmain
+        // .post-sidebar
+        

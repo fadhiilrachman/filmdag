@@ -3,7 +3,7 @@
 let port = 3002;
 let app_name='Filmdag!';
 
-const Filmdag = require('./src/Filmdag.js')
+const Filmdag = require('./src/Filmdag')
 
 const express = require('express')
 const minify = require('express-minify')
@@ -32,11 +32,34 @@ app.get('/api/movieNowPlaying', (req, res) => {
     })
 })
 
+app.get('/movie/:movieId', (req, res) => {
+	if (!(req.params.movieId)) {
+		res.status(500).send('Error');
+	}
+    var movie_id = req.params.movieId;
+    fd.getFilmById(movie_id).then(function(d) {
+        fd.getReviewsFilmById(movie_id).then(function(r) {
+            let data = JSON.parse( d.toString() );
+            let data_r = JSON.parse( r.toString() );
+            var app_name = data.title;
+            var rd_time = new Date( data.release_date );
+            var release_date = rd_time.getDate() +', '+ rd_time.getFullMonth() +' '+ rd_time.getFullYear();
+            var release_year = rd_time.getFullYear();
+
+            var reviews = data_r.reviews;
+            res
+                .status(200)
+                .render('movie-overview', { page_title: app_name, data: data, data_r: data_r,
+                    release_year: release_year, release_date:release_date, reviews: reviews
+                });
+        })
+    })
+})
+
 app.get('/', (req, res) => {
     res
         .status(200)
         .render('index', { page_title: app_name })
-    
 })
 
 app
